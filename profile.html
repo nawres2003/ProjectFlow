@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil - ProjectFlow</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Header standard (comme index.html) -->
+    
+    <main>
+        <section class="section profile">
+            <div class="container">
+                <h2 class="h2 section-title underline">Mon Profil</h2>
+                
+                <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="profile-avatar">
+                            <div class="avatar-large" id="profile-avatar">
+                                <!-- Initiale -->
+                            </div>
+                            <h3 id="profile-name"></h3>
+                            <p id="profile-email"></p>
+                        </div>
+                        
+                        <nav class="profile-nav">
+                            <a href="#info" class="profile-nav-link active">
+                                <ion-icon name="person-outline"></ion-icon>
+                                Informations personnelles
+                            </a>
+                            <a href="#security" class="profile-nav-link">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                Sécurité
+                            </a>
+                            <a href="#preferences" class="profile-nav-link">
+                                <ion-icon name="settings-outline"></ion-icon>
+                                Préférences
+                            </a>
+                            <a href="#stats" class="profile-nav-link">
+                                <ion-icon name="stats-chart-outline"></ion-icon>
+                                Statistiques
+                            </a>
+                        </nav>
+                    </div>
+                    
+                    <div class="profile-content">
+                        <!-- Contenu du profil -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="./assets/js/auth.js"></script>
+    <script>
+        // Remplir les informations du profil
+        if (authManager && authManager.currentUser) {
+            document.getElementById('profile-name').textContent = authManager.currentUser.name;
+            document.getElementById('profile-email').textContent = authManager.currentUser.email;
+            
+            const avatar = document.getElementById('profile-avatar');
+            const initial = authManager.currentUser.name.charAt(0).toUpperCase();
+            avatar.textContent = initial;
+        } else {
+            // Rediriger vers la connexion si non connecté
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

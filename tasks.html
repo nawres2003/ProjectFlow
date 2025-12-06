@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectFlow - Tâches</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="index.html">
+        <h1 class="logo">ProjectFlow</h1>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="index.html" class="logo">ProjectFlow</a>
+          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="index.html#home" class="navbar-link" data-navbar-link>Accueil</a></li>
+          <li class="navbar-item"><a href="projets.html" class="navbar-link" data-navbar-link>Projets</a></li>
+          <li class="navbar-item"><a href="tasks.html" class="navbar-link" data-navbar-link>Tâches</a></li>
+          <li class="navbar-item"><a href="dashboard.html" class="navbar-link" data-navbar-link>Dashboard</a></li>
+          <li class="navbar-item"><a href="contact.html" class="navbar-link" data-navbar-link>Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <article>
+
+      <!-- HERO TASKS -->
+      <section class="hero" id="tasks-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="h2 hero-title">Gestion des Tâches</h2>
+            <p class="hero-text">
+              Organisez et suivez vos tâches avec le système Kanban. Glissez-déposez les tâches entre les colonnes pour mettre à jour leur statut.
+            </p>
+            <button class="btn btn-primary" id="add-task-btn">
+              <ion-icon name="add-outline"></ion-icon>
+              Nouvelle Tâche
+            </button>
+          </div>
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="694" height="529" loading="lazy" alt="Tâches Banner"
+              class="w-100 banner-animation">
+          </figure>
+        </div>
+      </section>
+
+      <!-- KANBAN BOARD -->
+      <section class="section tasks" id="tasks">
+        <div class="container">
+          <h2 class="h2 section-title underline">Tableau Kanban</h2>
+          
+          <div class="kanban-controls">
+            <div class="search-filter-bar">
+              <div class="search-box">
+                <input type="text" id="task-search" placeholder="Rechercher une tâche...">
+                <ion-icon name="search-outline"></ion-icon>
+              </div>
+              <div class="filter-box">
+                <select id="project-filter">
+                  <option value="all">Tous les projets</option>
+                  <!-- Les options seront chargées dynamiquement -->
+                </select>
+              </div>
+              <div class="filter-box">
+                <select id="priority-filter">
+                  <option value="all">Toutes les priorités</option>
+                  <option value="high">Haute</option>
+                  <option value="medium">Moyenne</option>
+                  <option value="low">Basse</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="kanban-board" id="kanban-board">
+            <!-- Colonne À Faire -->
+            <div class="kanban-column" data-status="todo">
+              <div class="column-header">
+                <h3 class="column-title">À Faire</h3>
+                <span class="column-count" id="todo-count">0</span>
+              </div>
+              <div class="tasks-list" id="todo-tasks" data-status="todo">
+                <!-- Tâches À Faire -->
+              </div>
+              <button class="add-task-btn" data-status="todo">
+                <ion-icon name="add-outline"></ion-icon>
+                Ajouter une tâche
+              </button>
+            </div>
+
+            <!-- Colonne En Cours -->
+            <div class="kanban-column" data-status="in-progress">
+              <div class="column-header">
+                <h3 class="column-title">En Cours</h3>
+                <span class="column-count" id="in-progress-count">0</span>
+              </div>
+              <div class="tasks-list" id="in-progress-tasks" data-status="in-progress">
+                <!-- Tâches En Cours -->
+              </div>
+              <button class="add-task-btn" data-status="in-progress">
+                <ion-icon name="add-outline"></ion-icon>
+                Ajouter une tâche
+              </button>
+            </div>
+
+            <!-- Colonne Terminé -->
+            <div class="kanban-column" data-status="done">
+              <div class="column-header">
+                <h3 class="column-title">Terminé</h3>
+                <span class="column-count" id="done-count">0</span>
+              </div>
+              <div class="tasks-list" id="done-tasks" data-status="done">
+                <!-- Tâches Terminées -->
+              </div>
+              <button class="add-task-btn" data-status="done">
+                <ion-icon name="add-outline"></ion-icon>
+                Ajouter une tâche
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- MODAL AJOUT/EDITION DE TÂCHE -->
+  <div class="modal" id="task-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="task-modal-title">Nouvelle Tâche</h3>
+        <button class="modal-close" id="task-modal-close">&times;</button>
+      </div>
+      <form id="task-form">
+        <input type="hidden" id="task-id">
+        <input type="hidden" id="task-status">
+        
+        <div class="form-group">
+          <label for="task-title">Titre de la tâche *</label>
+          <input type="text" id="task-title" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="task-description">Description</label>
+          <textarea id="task-description" rows="3" placeholder="Décrivez la tâche..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="task-project">Projet</label>
+            <select id="task-project">
+              <option value="">Sans projet</option>
+              <!-- Les options seront chargées dynamiquement -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="task-priority">Priorité</label>
+            <select id="task-priority">
+              <option value="low">Basse</option>
+              <option value="medium" selected>Moyenne</option>
+              <option value="high">Haute</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="task-due-date">Date d'échéance</label>
+            <input type="date" id="task-due-date">
+          </div>
+          
+          <div class="form-group">
+            <label for="task-category">Catégorie</label>
+            <select id="task-category">
+              <option value="development">Développement</option>
+              <option value="design">Design</option>
+              <option value="marketing">Marketing</option>
+              <option value="research">Recherche</option>
+              <option value="other">Autre</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="task-cancel-btn">Annuler</button>
+          <button type="submit" class="btn btn-primary" id="task-save-btn">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top section">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">ProjectFlow</a>
+          <p class="text">
+            Maecenas pellentesque placerat quam, in finibus nisl tincidunt sed. Aliquam magna augue, malesuada ut
+            feugiat eget, cursus eget felis.
+          </p>
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Our links</p></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="index.html#about" class="footer-link">About Us</a></li>
+          <li><a href="index.html#services" class="footer-link">Services</a></li>
+          <li><a href="index.html#team" class="footer-link">Team</a></li>
+          <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Our Services</p></li>
+          <li><a href="#" class="footer-link">Strategy & Research</a></li>
+          <li><a href="#" class="footer-link">Web Development</a></li>
+          <li><a href="#" class="footer-link">Web Solution</a></li>
+          <li><a href="#" class="footer-link">Digital Marketing</a></li>
+          <li><a href="#" class="footer-link">App Design</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Other links</p></li>
+          <li><a href="#" class="footer-link">FAQ</a></li>
+          <li><a href="#" class="footer-link">Portfolio</a></li>
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+          <li><a href="#" class="footer-link">Support</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Contact Us</p></li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="call"></ion-icon></div>
+            <div>
+              <a href="tel:+2484214313" class="footer-item-link">+248-421-4313</a>
+              <a href="tel:+2486871365" class="footer-item-link">+248-687-1365</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="mail"></ion-icon></div>
+            <div>
+              <a href="mailto:info@projectflow.com" class="footer-item-link">info@projectflow.com</a>
+              <a href="mailto:help@projectflow.com" class="footer-item-link">help@projectflow.com</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="location"></ion-icon></div>
+            <address class="footer-item-link">
+              Pontiac, Michigan, United States of America
+            </address>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link">ProjectFlow</a>. All Right Reserved
+      </p>
+    </div>
+  </footer>
+
+  <!-- GO TO TOP -->
+  <a href="#top" class="go-top active" aria-label="Go To Top" data-go-top>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- JS -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets//js/tasks.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

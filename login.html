@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - ProjectFlow</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo">ProjectFlow</a>
+                <h1>Connexion</h1>
+                <p>Connectez-vous pour gérer vos projets</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" required placeholder="Votre mot de passe">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="remember">
+                        <span>Se souvenir de moi</span>
+                    </label>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Se connecter
+                </button>
+
+                <div class="auth-divider">
+                    <span>Ou</span>
+                </div>
+
+                <a href="register.html" class="btn btn-secondary btn-block">
+                    Créer un compte
+                </a>
+            </form>
+
+            <div class="auth-footer">
+                <p>En vous connectant, vous acceptez nos <a href="#">Conditions d'utilisation</a> et notre <a href="#">Politique de confidentialité</a>.</p>
+                <a href="index.html" class="back-home">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+
+        <div class="auth-illustration">
+            <img src="./assets/images/hero-banner.png" alt="Connexion ProjectFlow">
+            <div class="illustration-text">
+                <h2>Gérez vos projets efficacement</h2>
+                <p>Rejoignez des milliers d'utilisateurs qui utilisent ProjectFlow pour organiser leur travail.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/auth.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            try {
+                await authManager.login(email, password);
+            } catch (error) {
+                authManager.showNotification(error.message, 'error');
+            }
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - ProjectFlow – Gestion Intelligente de Projets</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/auth.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER CORRIGÉ AVEC AUTHENTIFICATION -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo-link">
+        <h1 class="logo">ProjectFlow</h1>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="./index.html" class="logo">ProjectFlow</a>
+          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="./index.html" class="navbar-link" data-navbar-link>Accueil</a>
+          </li>
+          <li class="navbar-item">
+            <a href="./projets.html" class="navbar-link" data-navbar-link>Projets</a>
+          </li>
+          <li class="navbar-item">
+            <a href="./tasks.html" class="navbar-link" data-navbar-link>Tâches</a>
+          </li>
+          <li class="navbar-item">
+            <a href="./dashboard.html" class="navbar-link" data-navbar-link>Dashboard</a>
+          </li>
+          <li class="navbar-item">
+            <a href="./contact.html" class="navbar-link" data-navbar-link>Contact</a>
+          </li>
+        </ul>
+
+        <!-- Version mobile de l'authentification -->
+        <div class="auth-links-mobile">
+          <div id="user-links-mobile">
+            <a href="login.html" class="btn btn-secondary btn-small">Connexion</a>
+            <a href="register.html" class="btn btn-primary btn-small">Inscription</a>
+          </div>
+          <div id="user-menu-mobile" style="display: none;">
+            <div class="user-info-mobile">
+              <div class="user-avatar-small" id="user-avatar-mobile"></div>
+              <div>
+                <h4 id="user-name-mobile"></h4>
+                <p id="user-email-mobile"></p>
+              </div>
+            </div>
+            <a href="projets.html" class="navbar-link">
+              <ion-icon name="folder-outline"></ion-icon>
+              Mes projets
+            </a>
+            <a href="dashboard.html" class="navbar-link">
+              <ion-icon name="stats-chart-outline"></ion-icon>
+              Dashboard
+            </a>
+            <a href="#" id="logout-btn-mobile" class="navbar-link">
+              <ion-icon name="log-out-outline"></ion-icon>
+              Déconnexion
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Version desktop de l'authentification -->
+      <div class="auth-links">
+        <div id="user-links">
+          <a href="login.html" class="btn btn-secondary">Connexion</a>
+          <a href="register.html" class="btn btn-primary">Inscription</a>
+        </div>
+        
+        <div id="user-menu" class="user-menu" style="display: none;">
+          <div class="user-dropdown">
+            <button class="user-dropdown-btn">
+              <div class="user-avatar" id="user-avatar"></div>
+              <span id="welcome-message"></span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </button>
+            <div class="user-dropdown-content">
+              <div class="user-info">
+                <h4 id="user-name"></h4>
+                <p id="user-email"></p>
+              </div>
+              <div class="user-dropdown-links">
+                <a href="projets.html">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  Mes projets
+                </a>
+                <a href="tasks.html">
+                  <ion-icon name="checkmark-done-outline"></ion-icon>
+                  Mes tâches
+                </a>
+                <a href="dashboard.html">
+                  <ion-icon name="stats-chart-outline"></ion-icon>
+                  Dashboard
+                </a>
+                <a href="#" id="logout-btn">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  Déconnexion
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- HERO CONTACT -->
+      <section class="hero" id="contact-hero">
+        <div class="container">
+          <div class="hero-content">
+            <p class="hero-subtitle">Contactez-nous</p>
+            <h2 class="h2 hero-title">Nous sommes là pour vous aider</h2>
+            <p class="hero-text">
+              Vous avez des questions sur ProjectFlow ? Besoin d'assistance technique ou souhaitez-nous faire part de vos retours ? 
+              Notre équipe est à votre écoute pour vous accompagner.
+            </p>
+            <div class="contact-actions">
+              <a href="mailto:info@projectflow.com" class="btn">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span>Nous écrire</span>
+              </a>
+              <a href="tel:+2484214313" class="btn btn-secondary">
+                <ion-icon name="call-outline"></ion-icon>
+                <span>Nous appeler</span>
+              </a>
+            </div>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="694" height="529" loading="lazy" alt="Contactez-nous"
+              class="w-100 banner-animation">
+          </figure>
+        </div>
+      </section>
+
+      <!-- FORMULAIRE DE CONTACT -->
+      <section class="section contact-form-section" id="contact-form">
+        <div class="container">
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <h2 class="h2 section-title underline">Informations de contact</h2>
+              <p class="contact-text">
+                N'hésitez pas à nous contacter via le formulaire ou directement par téléphone ou email. 
+                Nous vous répondrons dans les plus brefs délais.
+              </p>
+
+              <div class="contact-methods">
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <ion-icon name="call-outline"></ion-icon>
+                  </div>
+                  <div class="method-info">
+                    <h3>Téléphone</h3>
+                    <p>+248-421-4313</p>
+                    <p>+248-687-1365</p>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <ion-icon name="mail-outline"></ion-icon>
+                  </div>
+                  <div class="method-info">
+                    <h3>Email</h3>
+                    <p>info@projectflow.com</p>
+                    <p>help@projectflow.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <ion-icon name="location-outline"></ion-icon>
+                  </div>
+                  <div class="method-info">
+                    <h3>Adresse</h3>
+                    <p>Pontiac, Michigan</p>
+                    <p>United States of America</p>
+                  </div>
+                </div>
+
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <ion-icon name="time-outline"></ion-icon>
+                  </div>
+                  <div class="method-info">
+                    <h3>Horaires</h3>
+                    <p>Lun - Ven: 9h00 - 18h00</p>
+                    <p>Sam: 9h00 - 14h00</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-contact">
+                <h3>Suivez-nous</h3>
+                <ul class="social-list">
+                  <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                  <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                  <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                  <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="contact-form-container">
+              <form class="contact-form" id="contactForm">
+                <h2 class="h2 section-title">Envoyez-nous un message</h2>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Adresse email *</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Sujet *</label>
+                  <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
+                </div>
+
+                <div class="form-group">
+                  <label for="category">Catégorie *</label>
+                  <select id="category" name="category" required>
+                    <option value="">Sélectionnez une catégorie</option>
+                    <option value="support">Support technique</option>
+                    <option value="feature">Demande de fonctionnalité</option>
+                    <option value="bug">Rapport de bug</option>
+                    <option value="partnership">Partenariat</option>
+                    <option value="other">Autre</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" required placeholder="Décrivez votre demande en détail..." rows="6"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter">
+                  <label for="newsletter">Je souhaite recevoir la newsletter ProjectFlow</label>
+                </div>
+
+                <div class="form-actions">
+                  <button type="reset" class="btn-secondary">Effacer</button>
+                  <button type="submit" class="btn">
+                    <ion-icon name="send-outline"></ion-icon>
+                    <span>Envoyer le message</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq-section" id="faq">
+        <div class="container">
+          <h2 class="h2 section-title underline">Questions fréquentes</h2>
+
+          <div class="faq-grid">
+            <div class="faq-category">
+              <h3>Utilisation de l'application</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Comment créer mon premier projet ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Rendez-vous sur la page "Projets" et cliquez sur le bouton "Nouveau projet". Remplissez les informations requises (nom, description, catégorie) et sauvegardez. Votre projet sera créé et prêt à accueillir des tâches.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Comment déplacer une tâche entre les colonnes ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Sur la page "Tâches", maintenez le clic sur une tâche et glissez-la vers la colonne souhaitée (À faire, En cours, Terminé). Le système de drag & drop est entièrement fonctionnel.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Mes données sont-elles sauvegardées ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Oui, toutes vos données sont stockées localement dans votre navigateur via le localStorage. Vos projets et tâches restent accessibles même après fermeture du navigateur.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-category">
+              <h3>Fonctionnalités</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Comment exporter mes données ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Rendez-vous sur le "Dashboard" et cliquez sur le bouton "Exporter les données". Vous pourrez télécharger un rapport PDF complet de vos projets et statistiques.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Puis-je filtrer mes tâches par priorité ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Oui, sur la page "Tâches", utilisez le menu déroulant de filtrage pour afficher les tâches par priorité (Haute, Moyenne, Basse) ou par statut.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Le dashboard affiche-t-il des données en temps réel ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Absolument ! Le dashboard se met à jour automatiquement à chaque modification de vos projets ou tâches. Les graphiques reflètent l'état actuel de votre productivité.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-category">
+              <h3>Support technique</h3>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Que faire si je rencontre un bug ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Contactez-nous via le formulaire en sélectionnant "Rapport de bug". Décrivez le problème rencontré, les étapes pour le reproduire, et votre configuration navigateur.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>ProjectFlow fonctionne-t-il sur mobile ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Oui, l'application est entièrement responsive et s'adapte à tous les écrans, des ordinateurs de bureau aux smartphones.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question">
+                    <span>Quels navigateurs sont supportés ?</span>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                  </button>
+                  <div class="faq-answer">
+                    <p>ProjectFlow est compatible avec Chrome, Firefox, Safari, Edge et tous les navigateurs modernes supportant JavaScript ES6+.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+          <a href="./index.html" class="logo">ProjectFlow</a>
+          <p class="text">
+            Plateforme de gestion de projets intelligente avec système Kanban, dashboard analytique et outils de collaboration pour les équipes modernes.
+          </p>
+
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Navigation</p></li>
+          <li><a href="./index.html" class="footer-link">Accueil</a></li>
+          <li><a href="./projets.html" class="footer-link">Projets</a></li>
+          <li><a href="./tasks.html" class="footer-link">Tâches</a></li>
+          <li><a href="./dashboard.html" class="footer-link">Dashboard</a></li>
+          <li><a href="./contact.html" class="footer-link">Contact</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Nos Services</p></li>
+          <li><a href="./projets.html" class="footer-link">Gestion de Projets</a></li>
+          <li><a href="./tasks.html" class="footer-link">Gestion des Tâches</a></li>
+          <li><a href="./dashboard.html" class="footer-link">Analytics</a></li>
+          <li><a href="#" class="footer-link">Collaboration d'Équipe</a></li>
+          <li><a href="#" class="footer-link">Rapports Avancés</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Liens Utiles</p></li>
+          <li><a href="#" class="footer-link">FAQ</a></li>
+          <li><a href="#" class="footer-link">Guide d'utilisation</a></li>
+          <li><a href="#" class="footer-link">Politique de Confidentialité</a></li>
+          <li><a href="#" class="footer-link">Conditions d'Utilisation</a></li>
+          <li><a href="#" class="footer-link">Support</a></li>
+          <li><a href="./contact.html" class="footer-link">Nous Contacter</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Contactez-nous</p></li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="call"></ion-icon></div>
+            <div>
+              <a href="tel:+2484214313" class="footer-item-link">+248-421-4313</a>
+              <a href="tel:+2486871365" class="footer-item-link">+248-687-1365</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="mail"></ion-icon></div>
+            <div>
+              <a href="mailto:info@projectflow.com" class="footer-item-link">info@projectflow.com</a>
+              <a href="mailto:help@projectflow.com" class="footer-item-link">help@projectflow.com</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="location"></ion-icon></div>
+            <address class="footer-item-link">Pontiac, Michigan, United States of America</address>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2025 <a href="./index.html" class="copyright-link">ProjectFlow</a>. Tous droits réservés
+      </p>
+    </div>
+  </footer>
+
+  <!-- GO TO TOP -->
+  <a href="#top" class="go-top active" aria-label="Go To Top" data-go-top>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- custom js link -->
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/auth.js"></script>
+  <script src="./assets/js/contact.js"></script>
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Gestion spécifique à la page contact
+    document.addEventListener('DOMContentLoaded', function() {
+      // Si l'utilisateur est connecté, remplir automatiquement les champs nom et email
+      if (window.authManager && authManager.currentUser) {
+        const nameField = document.getElementById('name');
+        const emailField = document.getElementById('email');
+        
+        if (nameField && !nameField.value) {
+          nameField.value = authManager.currentUser.name;
+        }
+        
+        if (emailField && !emailField.value) {
+          emailField.value = authManager.currentUser.email;
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>

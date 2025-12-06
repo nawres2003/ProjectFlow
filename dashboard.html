@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectFlow - Dashboard</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <a href="index.html">
+        <h1 class="logo">ProjectFlow</h1>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="index.html" class="logo">ProjectFlow</a>
+          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="index.html#home" class="navbar-link" data-navbar-link>Accueil</a></li>
+          <li class="navbar-item"><a href="./projets.html" class="navbar-link" data-navbar-link>Projets</a></li>
+          <li class="navbar-item"><a href="tasks.html" class="navbar-link" data-navbar-link>Tâches</a></li>
+          <li class="navbar-item"><a href="dashboard.html" class="navbar-link" data-navbar-link>Dashboard</a></li>
+          <li class="navbar-item"><a href="contact.html" class="navbar-link" data-navbar-link>Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <article>
+
+      <!-- HERO DASHBOARD -->
+      <section class="hero" id="dashboard-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="h2 hero-title">Dashboard Analytics</h2>
+            <p class="hero-text">
+              Visualisez l'avancement de vos projets et tâches avec des graphiques interactifs et des statistiques détaillées.
+            </p>
+            <div class="dashboard-actions">
+              <button class="btn btn-primary" id="refresh-stats">
+                <ion-icon name="refresh-outline"></ion-icon>
+                Actualiser
+              </button>
+              <button class="btn btn-secondary" id="export-data">
+                <ion-icon name="download-outline"></ion-icon>
+                Exporter
+              </button>
+            </div>
+          </div>
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="694" height="529" loading="lazy" alt="Dashboard Banner"
+              class="w-100 banner-animation">
+          </figure>
+        </div>
+      </section>
+
+      <!-- STATISTIQUES RAPIDES -->
+      <section class="section stats-overview">
+        <div class="container">
+          <h2 class="h2 section-title underline">Aperçu Global</h2>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon total-projects">
+                <ion-icon name="folder-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <h3 class="stat-value" id="total-projects">0</h3>
+                <p class="stat-label">Projets Totaux</p>
+              </div>
+              <div class="stat-trend positive">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <span>+12%</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon total-tasks">
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <h3 class="stat-value" id="total-tasks">0</h3>
+                <p class="stat-label">Tâches Total</p>
+              </div>
+              <div class="stat-trend positive">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <span>+8%</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon completed-tasks">
+                <ion-icon name="trophy-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <h3 class="stat-value" id="completed-tasks">0</h3>
+                <p class="stat-label">Tâches Terminées</p>
+              </div>
+              <div class="stat-trend positive">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <span>+15%</span>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon progress-rate">
+                <ion-icon name="speedometer-outline"></ion-icon>
+              </div>
+              <div class="stat-info">
+                <h3 class="stat-value" id="progress-rate">0%</h3>
+                <p class="stat-label">Taux d'Avancement</p>
+              </div>
+              <div class="stat-trend positive">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <span>+5%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRAPHIQUES PRINCIPAUX -->
+      <section class="section charts">
+        <div class="container">
+          <div class="charts-grid">
+            <!-- Graphique Statut des Tâches -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3 class="chart-title">Répartition des Tâches</h3>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color todo"></span>
+                    <span>À Faire</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color in-progress"></span>
+                    <span>En Cours</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color done"></span>
+                    <span>Terminé</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="tasks-status-chart"></canvas>
+              </div>
+            </div>
+
+            <!-- Graphique Priorités des Tâches -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3 class="chart-title">Tâches par Priorité</h3>
+                <div class="chart-legend">
+                  <div class="legend-item">
+                    <span class="legend-color high"></span>
+                    <span>Haute</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color medium"></span>
+                    <span>Moyenne</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color low"></span>
+                    <span>Basse</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="tasks-priority-chart"></canvas>
+              </div>
+            </div>
+
+            <!-- Graphique Évolution dans le temps -->
+            <div class="chart-card full-width">
+              <div class="chart-header">
+                <h3 class="chart-title">Évolution des Tâches</h3>
+                <div class="chart-filters">
+                  <select id="time-range">
+                    <option value="7">7 derniers jours</option>
+                    <option value="30" selected>30 derniers jours</option>
+                    <option value="90">3 derniers mois</option>
+                  </select>
+                </div>
+              </div>
+              <div class="chart-container">
+                <canvas id="tasks-timeline-chart"></canvas>
+              </div>
+            </div>
+
+            <!-- Graphique Projets par Catégorie -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3 class="chart-title">Projets par Catégorie</h3>
+              </div>
+              <div class="chart-container">
+                <canvas id="projects-category-chart"></canvas>
+              </div>
+            </div>
+
+            <!-- Graphique Performance -->
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3 class="chart-title">Performance Mensuelle</h3>
+              </div>
+              <div class="chart-container">
+                <canvas id="performance-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTES DÉTAILLÉES -->
+      <section class="section detailed-lists">
+        <div class="container">
+          <div class="lists-grid">
+            <!-- Projets Récents -->
+            <div class="list-card">
+              <div class="list-header">
+                <h3 class="list-title">Projets Récents</h3>
+                <a href="./projets.html" class="view-all">Voir tout</a>
+              </div>
+              <div class="list-content" id="recent-projects-list">
+                <!-- Chargé dynamiquement -->
+              </div>
+            </div>
+
+            <!-- Tâches Échéance Proche -->
+            <div class="list-card">
+              <div class="list-header">
+                <h3 class="list-title">Échéances Proches</h3>
+                <a href="tasks.html" class="view-all">Voir tout</a>
+              </div>
+              <div class="list-content" id="upcoming-tasks-list">
+                <!-- Chargé dynamiquement -->
+              </div>
+            </div>
+
+            <!-- Tâches Haute Priorité -->
+            <div class="list-card">
+              <div class="list-header">
+                <h3 class="list-title">Tâches Importantes</h3>
+                <a href="tasks.html" class="view-all">Voir tout</a>
+              </div>
+              <div class="list-content" id="high-priority-tasks-list">
+                <!-- Chargé dynamiquement -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top section">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">ProjectFlow</a>
+          <p class="text">
+            Maecenas pellentesque placerat quam, in finibus nisl tincidunt sed. Aliquam magna augue, malesuada ut
+            feugiat eget, cursus eget felis.
+          </p>
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Our links</p></li>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="index.html#about" class="footer-link">About Us</a></li>
+          <li><a href="index.html#services" class="footer-link">Services</a></li>
+          <li><a href="index.html#team" class="footer-link">Team</a></li>
+          <li><a href="index.html#blog" class="footer-link">Blog</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Our Services</p></li>
+          <li><a href="#" class="footer-link">Strategy & Research</a></li>
+          <li><a href="#" class="footer-link">Web Development</a></li>
+          <li><a href="#" class="footer-link">Web Solution</a></li>
+          <li><a href="#" class="footer-link">Digital Marketing</a></li>
+          <li><a href="#" class="footer-link">App Design</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Other links</p></li>
+          <li><a href="#" class="footer-link">FAQ</a></li>
+          <li><a href="#" class="footer-link">Portfolio</a></li>
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+          <li><a href="#" class="footer-link">Support</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Contact Us</p></li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="call"></ion-icon></div>
+            <div>
+              <a href="tel:+2484214313" class="footer-item-link">+248-421-4313</a>
+              <a href="tel:+2486871365" class="footer-item-link">+248-687-1365</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="mail"></ion-icon></div>
+            <div>
+              <a href="mailto:info@projectflow.com" class="footer-item-link">info@projectflow.com</a>
+              <a href="mailto:help@projectflow.com" class="footer-item-link">help@projectflow.com</a>
+            </div>
+          </li>
+          <li class="footer-item">
+            <div class="footer-item-icon"><ion-icon name="location"></ion-icon></div>
+            <address class="footer-item-link">
+              Pontiac, Michigan, United States of America
+            </address>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link">ProjectFlow</a>. All Right Reserved
+      </p>
+    </div>
+  </footer>
+
+  <!-- GO TO TOP -->
+  <a href="#top" class="go-top active" aria-label="Go To Top" data-go-top>
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </a>
+
+  <!-- JS -->
+  <script src="./assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

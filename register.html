@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - ProjectFlow</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo">ProjectFlow</a>
+                <h1>Créer un compte</h1>
+                <p>Commencez à organiser vos projets gratuitement</p>
+            </div>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" required placeholder="Votre nom complet">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" required placeholder="Créez un mot de passe">
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Force du mot de passe</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" required placeholder="Confirmez votre mot de passe">
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <span>J'accepte les <a href="#">Conditions d'utilisation</a> et la <a href="#">Politique de confidentialité</a></span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="newsletter" checked>
+                        <span>Je souhaite recevoir des conseils et des mises à jour par email</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Créer mon compte
+                </button>
+
+                <div class="auth-divider">
+                    <span>Déjà un compte ?</span>
+                </div>
+
+                <a href="login.html" class="btn btn-secondary btn-block">
+                    Se connecter
+                </a>
+            </form>
+
+            <div class="auth-footer">
+                <p>En créant un compte, vous pourrez :</p>
+                <ul>
+                    <li>Créer et gérer des projets illimités</li>
+                    <li>Suivre vos tâches avec le tableau Kanban</li>
+                    <li>Visualiser vos statistiques</li>
+                </ul>
+                <a href="index.html" class="back-home">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+
+        <div class="auth-illustration">
+            <img src="./assets/images/hero-banner.png" alt="Inscription ProjectFlow">
+            <div class="illustration-text">
+                <h2>Rejoignez la communauté</h2>
+                <p>Créez votre compte en 30 secondes et commencez à organiser vos projets dès aujourd'hui.</p>
+                <div class="testimonial">
+                    <p>"ProjectFlow a transformé ma façon de travailler. Je suis 40% plus productif !"</p>
+                    <span>- Marie, Développeuse</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/auth.js"></script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Validation
+            if (password !== confirmPassword) {
+                authManager.showNotification('Les mots de passe ne correspondent pas.', 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                authManager.showNotification('Le mot de passe doit contenir au moins 6 caractères.', 'error');
+                return;
+            }
+            
+            try {
+                await authManager.register(name, email, password);
+            } catch (error) {
+                authManager.showNotification(error.message, 'error');
+            }
+        });
+        
+        // Validation en temps réel du mot de passe
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthBar = document.querySelector('.strength-bar');
+            const strengthText = document.querySelector('.strength-text');
+            
+            let strength = 0;
+            if (password.length >= 6) strength += 25;
+            if (/[A-Z]/.test(password)) strength += 25;
+            if (/[0-9]/.test(password)) strength += 25;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 25;
+            
+            strengthBar.style.width = strength + '%';
+            
+            if (strength < 25) {
+                strengthBar.style.backgroundColor = '#ef4444';
+                strengthText.textContent = 'Très faible';
+            } else if (strength < 50) {
+                strengthBar.style.backgroundColor = '#f59e0b';
+                strengthText.textContent = 'Faible';
+            } else if (strength < 75) {
+                strengthBar.style.backgroundColor = '#3b82f6';
+                strengthText.textContent = 'Moyen';
+            } else {
+                strengthBar.style.backgroundColor = '#10b981';
+                strengthText.textContent = 'Fort';
+            }
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

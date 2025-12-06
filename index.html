@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desinic - Get Best UI Design</title>
+  <title>ProjectFlow – Gestion Intelligente de Projets</title>
 
-  <!-- 
-    - favicon
-  -->
+  <!-- favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
+  <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -29,247 +23,232 @@
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- HEADER CORRIGÉ -->
   <header class="header" data-header>
     <div class="container">
-
       <div class="overlay" data-overlay></div>
 
-      <a href="#">
-        <h1 class="logo">Desinic</h1>
+      <a href="./index.html" class="logo-link">
+        <h1 class="logo">ProjectFlow</h1>
       </a>
 
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-          <a href="#" class="logo">Desinic</a>
-
+          <a href="./index.html" class="logo">ProjectFlow</a>
           <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
             <ion-icon name="close-outline"></ion-icon>
           </button>
         </div>
 
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <a href="#home" class="navbar-link" data-navbar-link>Home</a>
+            <a href="#home" class="navbar-link" data-navbar-link>Accueil</a>
           </li>
-
           <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-navbar-link>About</a>
+            <a href="./projets.html" class="navbar-link" data-navbar-link>Projets</a>
           </li>
-
           <li class="navbar-item">
-            <a href="#services" class="navbar-link" data-navbar-link>Services</a>
+            <a href="./tasks.html" class="navbar-link" data-navbar-link>Tâches</a>
           </li>
-
           <li class="navbar-item">
-            <a href="#features" class="navbar-link" data-navbar-link>Features</a>
+            <a href="./dashboard.html" class="navbar-link" data-navbar-link>Dashboard</a>
           </li>
-
           <li class="navbar-item">
-            <a href="#blog" class="navbar-link" data-navbar-link>Blog</a>
+            <a href="./contact.html" class="navbar-link" data-navbar-link>Contact</a>
           </li>
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link" data-navbar-link>Contact Us</a>
-          </li>
-
         </ul>
 
+        <!-- Version mobile de l'authentification -->
+        <div class="auth-links-mobile">
+          <div id="user-links-mobile">
+            <a href="login.html" class="btn btn-secondary btn-small">Connexion</a>
+            <a href="register.html" class="btn btn-primary btn-small">Inscription</a>
+          </div>
+          <div id="user-menu-mobile" style="display: none;">
+            <div class="user-info-mobile">
+              <div class="user-avatar-small" id="user-avatar-mobile"></div>
+              <div>
+                <h4 id="user-name-mobile"></h4>
+                <p id="user-email-mobile"></p>
+              </div>
+            </div>
+            <a href="projets.html" class="navbar-link">
+              <ion-icon name="folder-outline"></ion-icon>
+              Mes projets
+            </a>
+            <a href="dashboard.html" class="navbar-link">
+              <ion-icon name="stats-chart-outline"></ion-icon>
+              Dashboard
+            </a>
+            <a href="#" id="logout-btn-mobile" class="navbar-link">
+              <ion-icon name="log-out-outline"></ion-icon>
+              Déconnexion
+            </a>
+          </div>
+        </div>
       </nav>
 
-      <a href="#" class="btn">
-        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-
-        <span>Get A Quote</span>
-      </a>
+      <!-- Version desktop de l'authentification -->
+      <div class="auth-links">
+        <div id="user-links">
+          <a href="login.html" class="btn btn-secondary">Connexion</a>
+          <a href="register.html" class="btn btn-primary">Inscription</a>
+        </div>
+        
+        <div id="user-menu" class="user-menu" style="display: none;">
+          <div class="user-dropdown">
+            <button class="user-dropdown-btn">
+              <div class="user-avatar" id="user-avatar"></div>
+              <span id="welcome-message"></span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </button>
+            <div class="user-dropdown-content">
+              <div class="user-info">
+                <h4 id="user-name"></h4>
+                <p id="user-email"></p>
+              </div>
+              <div class="user-dropdown-links">
+                <a href="projets.html">
+                  <ion-icon name="folder-outline"></ion-icon>
+                  Mes projets
+                </a>
+                <a href="tasks.html">
+                  <ion-icon name="checkmark-done-outline"></ion-icon>
+                  Mes tâches
+                </a>
+                <a href="dashboard.html">
+                  <ion-icon name="stats-chart-outline"></ion-icon>
+                  Dashboard
+                </a>
+                <a href="#" id="logout-btn">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  Déconnexion
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
-
     </div>
   </header>
-
-
-
-
 
   <main>
     <article>
 
-      <!-- 
-        - #HERO
-      -->
-
+      <!-- HERO -->
       <section class="hero" id="home">
         <div class="container">
-
           <div class="hero-content">
-
-            <p class="hero-subtitle">We Are Product Designer From UK</p>
-
-            <h2 class="h2 hero-title">We Design Interfaces That Users Love</h2>
-
+            <p class="hero-subtitle">Gestion Intelligente de Projets</p>
+            <h2 class="h2 hero-title">Organisez, Suivez et Visualisez Vos Projets Facilement</h2>
             <p class="hero-text">
-              Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac
-              at purus.
+              ProjectFlow est une plateforme interactive qui vous permet de gérer vos projets et tâches avec un tableau
+              de type Kanban, des dashboards graphiques et des fonctionnalités avancées pour la productivité.
             </p>
-
-            <button class="btn">Learn More</button>
-
+            <a href="login.html" class="btn" id="start-btn">
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+              <span>Commencer maintenant</span>
+            </a>
           </div>
 
           <figure class="hero-banner">
             <img src="./assets/images/hero-banner.png" width="694" height="529" loading="lazy" alt="hero-banner"
               class="w-100 banner-animation">
           </figure>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
+      <!-- ABOUT -->
       <section class="section about" id="about">
         <div class="container">
-
           <figure class="about-banner">
             <img src="./assets/images/about-banner.png" width="700" height="532" loading="lazy" alt="about banner"
               class="w-100 banner-animation">
           </figure>
 
           <div class="about-content">
-
-            <h2 class="h2 section-title underline">Why Our Agency</h2>
-
+            <h2 class="h2 section-title underline">Pourquoi choisir ProjectFlow</h2>
             <p class="about-text">
-              In dictum aliquam turpis lacinia iaculis. Fusce vel malesuada magna. Nulla vel maximus risus. Donec
-              volutpat metus
-              lacinia risus accumsan, ac bibendum libero efficitur. Pellentesque nec nisi sit amet magna tempus
-              hendrerit ut a odio.
+              ProjectFlow fournit une interface moderne et intuitive pour organiser vos projets, suivre l'avancement de
+              chaque tâche et collaborer efficacement.
             </p>
-
             <p class="about-text">
-              Praesent rhoncus commodo tortor, id pulvinar nisl blandit at. Nulla facilisi. Quisque turpis ante,
-              vehicula condimentum
-              arcu.
+              Déplacez vos tâches facilement entre "À faire", "En cours" et "Terminé", visualisez vos projets grâce à
+              un dashboard graphique et améliorez la productivité de vos équipes.
             </p>
 
             <ul class="stats-list">
-
               <li class="stats-card">
-                <p class="h3 stats-title">9875</p>
-
-                <p class="stats-text">Satisfied Clients</p>
+                <p class="h3 stats-title">120</p>
+                <p class="stats-text">Projets Actifs</p>
               </li>
-
               <li class="stats-card">
-                <p class="h3 stats-title">7894</p>
-
-                <p class="stats-text">Project Lunched</p>
+                <p class="h3 stats-title">890</p>
+                <p class="stats-text">Tâches Créées</p>
               </li>
-
               <li class="stats-card">
-                <p class="h3 stats-title">65</p>
-
-                <p class="stats-text">Years Completed</p>
+                <p class="h3 stats-title">15</p>
+                <p class="stats-text">Équipes Collaboratives</p>
               </li>
-
             </ul>
-
           </div>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #SERVICE
-      -->
-
+      <!-- SERVICES / OUR SPECIALIZATION -->
       <section class="section service" id="services">
         <div class="container">
 
-          <h2 class="h2 section-title underline">Our Speciallization</h2>
+          <h2 class="h2 section-title underline">Nos Services</h2>
 
           <ul class="service-list">
 
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <ion-icon name="telescope-outline"></ion-icon>
                 </div>
-
-                <h3 class="h3 title">Strategy & Research</h3>
-
+                <h3 class="h3 title">Gestion de Projets</h3>
                 <p class="text">
-                  Mauris ut felis malesuada eros varius tristique a at orci. Nulla vulputate, leo sit amet rhoncus
-                  suscipit, enim ex
-                  venenatis ipsum, et porttitor.
+                  Organisez vos projets et visualisez l'avancement global grâce au tableau Kanban dynamique.
                 </p>
-
-                <button class="card-btn" aria-label="Show More">
+                <a href="login.html" class="card-btn" aria-label="Voir les projets">
                   <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-
+                </a>
               </div>
             </li>
 
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <ion-icon name="desktop-outline"></ion-icon>
                 </div>
-
-                <h3 class="h3 title">Web Development</h3>
-
+                <h3 class="h3 title">Suivi des Tâches</h3>
                 <p class="text">
-                  Mauris ut felis malesuada eros varius tristique a at orci. Nulla vulputate, leo sit amet rhoncus
-                  suscipit, enim ex
-                  venenatis ipsum, et porttitor.
+                  Créez, modifiez et déplacez vos tâches facilement entre les colonnes "À faire", "En cours" et "Terminé".
                 </p>
-
-                <button class="card-btn" aria-label="Show More">
+                <a href="login.html" class="card-btn" aria-label="Voir les tâches">
                   <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-
+                </a>
               </div>
             </li>
 
             <li>
               <div class="service-card">
-
                 <div class="card-icon">
                   <ion-icon name="globe-outline"></ion-icon>
                 </div>
-
-                <h3 class="h3 title">Web Solution</h3>
-
+                <h3 class="h3 title">Dashboard Intuitif</h3>
                 <p class="text">
-                  Mauris ut felis malesuada eros varius tristique a at orci. Nulla vulputate, leo sit amet rhoncus
-                  suscipit, enim ex
-                  venenatis ipsum, et porttitor.
+                  Visualisez les statistiques et les progrès de vos projets à travers des graphiques clairs et précis.
                 </p>
-
-                <button class="card-btn" aria-label="Show More">
+                <a href="login.html" class="card-btn" aria-label="Voir le dashboard">
                   <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-
+                </a>
               </div>
             </li>
 
@@ -278,57 +257,40 @@
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #FEATURES
-      -->
-
+      <!-- FEATURES -->
       <section class="section features" id="features">
         <div class="container">
 
-          <h2 class="h2 section-title underline">Our Features</h2>
+          <h2 class="h2 section-title underline">Fonctionnalités Clés</h2>
 
           <ul class="features-list">
-
             <li>
               <div class="features-card">
-
                 <div class="icon">
-                  <ion-icon name="bulb-outline"></ion-icon>
+                  <ion-icon name="layers-outline"></ion-icon>
                 </div>
-
                 <div class="content">
-                  <h3 class="h3 title">Idea & Analysis</h3>
-
+                  <h3 class="h3 title">Tableau Kanban</h3>
                   <p class="text">
-                    Praesent tincidunt congue est ut hendrerit. Pellentesque et eros sit amet ipsum venenatis.
+                    Organisez vos tâches dans des colonnes personnalisables avec un système de drag & drop intuitif.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="features-card">
-
                 <div class="icon">
-                  <ion-icon name="color-palette-outline"></ion-icon>
+                  <ion-icon name="trending-up-outline"></ion-icon>
                 </div>
-
                 <div class="content">
-                  <h3 class="h3 title">Designing</h3>
-
+                  <h3 class="h3 title">Dashboard Analytique</h3>
                   <p class="text">
-                    Praesent tincidunt congue est ut hendrerit. Pellentesque et eros sit amet ipsum venenatis.
+                    Suivez vos progrès avec des graphiques et statistiques en temps réel sur l'avancement de vos projets.
                   </p>
                 </div>
-
               </div>
             </li>
-
           </ul>
 
           <figure class="features-banner">
@@ -337,438 +299,180 @@
           </figure>
 
           <ul class="features-list">
-
             <li>
               <div class="features-card">
-
                 <div class="icon">
-                  <ion-icon name="code-slash-outline"></ion-icon>
+                  <ion-icon name="search-outline"></ion-icon>
                 </div>
-
                 <div class="content">
-                  <h3 class="h3 title">Development</h3>
-
+                  <h3 class="h3 title">Recherche & Filtrage</h3>
                   <p class="text">
-                    Praesent tincidunt congue est ut hendrerit. Pellentesque et eros sit amet ipsum venenatis.
+                    Trouvez rapidement vos projets et tâches grâce à des outils de recherche et filtrage avancés.
                   </p>
                 </div>
-
               </div>
             </li>
 
             <li>
               <div class="features-card">
-
                 <div class="icon">
-                  <ion-icon name="rocket-outline"></ion-icon>
+                  <ion-icon name="shield-checkmark-outline"></ion-icon>
                 </div>
-
                 <div class="content">
-                  <h3 class="h3 title">Testing & Lunching</h3>
-
+                  <h3 class="h3 title">Stockage Local</h3>
                   <p class="text">
-                    Praesent tincidunt congue est ut hendrerit. Pellentesque et eros sit amet ipsum venenatis.
+                    Toutes vos données sont stockées localement, garantissant la confidentialité et l'accès hors ligne.
                   </p>
                 </div>
-
               </div>
             </li>
-
           </ul>
 
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #BLOG
-      -->
-
+      <!-- BLOG -->
       <section class="section blog" id="blog">
         <div class="container">
-
-          <h2 class="h2 section-title underline">Our Blog & News</h2>
-
+          <h2 class="h2 section-title underline">Dernières Actualités</h2>
           <ul class="blog-list">
-
             <li>
               <div class="blog-card">
-
                 <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-1.jpg" width="750" height="350" loading="lazy"
-                      alt="Vestibulum massa arcu, consectetu pellentesque scelerisque." class="img-cover">
-                  </a>
+                  <a href="#"><img src="./assets/images/blog-1.jpg" width="750" height="350" loading="lazy"
+                      alt="Kanban dynamique" class="img-cover"></a>
                 </figure>
-
                 <div class="content">
-
                   <h3 class="h3 title">
-                    <a href="#">
-                      Vestibulum massa arcu, consectetu pellentesque scelerisque.
-                    </a>
+                    <a href="#">Nouvelle fonctionnalité Kanban dynamique ajoutée</a>
                   </h3>
-
                   <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
+                    Gérez vos tâches efficacement avec une nouvelle vue Kanban interactive.
                   </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
                 </div>
-
               </div>
             </li>
-
             <li>
               <div class="blog-card">
-
                 <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-2.jpg" width="750" height="350" loading="lazy"
-                      alt="Quisque egestas iaculis felis eget placerat ut pulvinar mi." class="img-cover">
-                  </a>
+                  <a href="#"><img src="./assets/images/blog-2.jpg" width="750" height="350" loading="lazy"
+                      alt="Dashboard amélioré" class="img-cover"></a>
                 </figure>
-
                 <div class="content">
-
                   <h3 class="h3 title">
-                    <a href="#">
-                      Quisque egestas iaculis felis eget placerat ut pulvinar mi.
-                    </a>
+                    <a href="#">Dashboard amélioré avec statistiques avancées</a>
                   </h3>
-
                   <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
+                    Visualisez vos projets et tâches grâce à des graphiques détaillés et clairs.
                   </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
                 </div>
-
               </div>
             </li>
-
             <li>
               <div class="blog-card">
-
                 <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-3.jpg" width="750" height="350" loading="lazy"
-                      alt="Fusce sem ligula, imperdiet sed nisi sit amet, euismod posuere." class="img-cover">
-                  </a>
+                  <a href="#"><img src="./assets/images/blog-3.jpg" width="750" height="350" loading="lazy"
+                      alt="Filtrage rapide" class="img-cover"></a>
                 </figure>
-
                 <div class="content">
-
                   <h3 class="h3 title">
-                    <a href="#">
-                      Fusce sem ligula, imperdiet sed nisi sit amet, euismod posuere.
-                    </a>
+                    <a href="#">Filtrage et recherche avancés</a>
                   </h3>
-
                   <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
+                    Trouvez rapidement vos tâches et projets grâce aux filtres intelligents.
                   </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
                 </div>
-
               </div>
             </li>
-
             <li>
               <div class="blog-card">
-
                 <figure class="banner">
-                  <a href="#">
-                    <img src="./assets/images/blog-4.jpg" width="750" height="350" loading="lazy"
-                      alt="Donec feugiat mollis nisi in dignissim. Morbi sollicitudin quis." class="img-cover">
-                  </a>
+                  <a href="#"><img src="./assets/images/blog-4.jpg" width="750" height="350" loading="lazy"
+                      alt="Collaboration en équipe" class="img-cover"></a>
                 </figure>
-
                 <div class="content">
-
                   <h3 class="h3 title">
-                    <a href="#">
-                      Donec feugiat mollis nisi in dignissim. Morbi sollicitudin quis.
-                    </a>
+                    <a href="#">Collaboration améliorée pour les équipes</a>
                   </h3>
-
                   <p class="text">
-                    Sed quis sagittis velit. Aliquam velit eros, bibendum ut massa et, consequat laoreet erat nam ac
-                    imperdiet.
+                    Travaillez efficacement en équipe avec une gestion claire des responsabilités et notifications.
                   </p>
-
-                  <div class="meta">
-
-                    <div class="publish-date">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="2022-03-07">7 March, 2022</time>
-                    </div>
-
-                    <button class="comment" aria-label="Comment">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-
-                      <data value="15">15</data>
-                    </button>
-
-                    <button class="share" aria-label="Share">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                    </button>
-
-                  </div>
-
                 </div>
-
               </div>
             </li>
-
           </ul>
-
         </div>
       </section>
 
     </article>
   </main>
 
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
+  <!-- FOOTER -->
   <footer class="footer">
-
     <div class="footer-top section">
       <div class="container">
 
         <div class="footer-brand">
-
-          <a href="#" class="logo">Desinic</a>
-
+          <a href="./index.html" class="logo">ProjectFlow</a>
           <p class="text">
-            Maecenas pellentesque placerat quam, in finibus nisl tincidunt sed. Aliquam magna augue, malesuada ut
-            feugiat eget,
-            cursus eget felis.
+            Plateforme de gestion de projets intelligente avec système Kanban, dashboard analytique et outils de collaboration pour les équipes modernes.
           </p>
 
           <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
           </ul>
-
         </div>
 
         <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Our links</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">About Us</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Services</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Team</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Blog</a>
-          </li>
-
+          <li><p class="footer-list-title">Navigation</p></li>
+          <li><a href="./index.html" class="footer-link">Accueil</a></li>
+          <li><a href="./projets.html" class="footer-link">Projets</a></li>
+          <li><a href="./tasks.html" class="footer-link">Tâches</a></li>
+          <li><a href="./dashboard.html" class="footer-link">Dashboard</a></li>
+          <li><a href="./contact.html" class="footer-link">Contact</a></li>
         </ul>
 
         <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Our Services</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Strategy & Research</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Web Development</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Web Solution</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Digital Marketing</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">App Design</a>
-          </li>
-
+          <li><p class="footer-list-title">Nos Services</p></li>
+          <li><a href="./projets.html" class="footer-link">Gestion de Projets</a></li>
+          <li><a href="./tasks.html" class="footer-link">Gestion des Tâches</a></li>
+          <li><a href="./dashboard.html" class="footer-link">Analytics</a></li>
+          <li><a href="#" class="footer-link">Collaboration d'Équipe</a></li>
+          <li><a href="#" class="footer-link">Rapports Avancés</a></li>
         </ul>
 
         <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Other links</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">FAQ</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Privacy Policy</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Terms & Conditions</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Support</a>
-          </li>
-
+          <li><p class="footer-list-title">Liens Utiles</p></li>
+          <li><a href="#" class="footer-link">FAQ</a></li>
+          <li><a href="#" class="footer-link">Guide d'utilisation</a></li>
+          <li><a href="#" class="footer-link">Politique de Confidentialité</a></li>
+          <li><a href="#" class="footer-link">Conditions d'Utilisation</a></li>
+          <li><a href="#" class="footer-link">Support</a></li>
+          <li><a href="./contact.html" class="footer-link">Nous Contacter</a></li>
         </ul>
 
         <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Contact Us</p>
-          </li>
-
+          <li><p class="footer-list-title">Contactez-nous</p></li>
           <li class="footer-item">
-
-            <div class="footer-item-icon">
-              <ion-icon name="call"></ion-icon>
-            </div>
-
+            <div class="footer-item-icon"><ion-icon name="call"></ion-icon></div>
             <div>
               <a href="tel:+2484214313" class="footer-item-link">+248-421-4313</a>
               <a href="tel:+2486871365" class="footer-item-link">+248-687-1365</a>
             </div>
-
           </li>
-
           <li class="footer-item">
-
-            <div class="footer-item-icon">
-              <ion-icon name="mail"></ion-icon>
-            </div>
-
+            <div class="footer-item-icon"><ion-icon name="mail"></ion-icon></div>
             <div>
-              <a href="mailto:info@desinic.com" class="footer-item-link">info@desinic.com</a>
-              <a href="mailto:help@desinic.com" class="footer-item-link">help@desinic.com</a>
+              <a href="mailto:info@projectflow.com" class="footer-item-link">info@projectflow.com</a>
+              <a href="mailto:help@projectflow.com" class="footer-item-link">help@projectflow.com</a>
             </div>
-
           </li>
-
           <li class="footer-item">
-
-            <div class="footer-item-icon">
-              <ion-icon name="location"></ion-icon>
-            </div>
-
-            <address class="footer-item-link">
-              Pontiac, Michigan, United States of America
-            </address>
-
+            <div class="footer-item-icon"><ion-icon name="location"></ion-icon></div>
+            <address class="footer-item-link">Pontiac, Michigan, United States of America</address>
           </li>
-
         </ul>
 
       </div>
@@ -776,38 +480,51 @@
 
     <div class="footer-bottom">
       <p class="copyright">
-        &copy; 2022 <a href="#" class="copyright-link">codewithsadee</a>. All Right Reserved
+        &copy; 2025 <a href="./index.html" class="copyright-link">ProjectFlow</a>. Tous droits réservés
       </p>
     </div>
-
   </footer>
 
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="go-top  active" aria-label="Go To Top" data-go-top>
+  <!-- GO TO TOP -->
+  <a href="#top" class="go-top active" aria-label="Go To Top" data-go-top>
     <ion-icon name="arrow-up-outline"></ion-icon>
   </a>
 
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
+  <!-- custom js link -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/auth.js"></script>
 
-  <!-- 
-    - ionicon link
-  -->
+  <!-- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Mise à jour du bouton "Commencer maintenant" en fonction de la connexion
+    document.addEventListener('DOMContentLoaded', function() {
+      // Attendre que authManager soit initialisé
+      setTimeout(() => {
+        if (window.authManager && authManager.currentUser) {
+          const startBtn = document.getElementById('start-btn');
+          if (startBtn) {
+            startBtn.href = 'projets.html';
+            startBtn.querySelector('span').textContent = 'Accéder aux projets';
+          }
+          
+          // Mettre à jour les liens des services
+          const serviceLinks = document.querySelectorAll('.service-card .card-btn');
+          serviceLinks.forEach(link => {
+            if (link.parentElement.querySelector('.title').textContent === 'Gestion de Projets') {
+              link.href = 'projets.html';
+            } else if (link.parentElement.querySelector('.title').textContent === 'Suivi des Tâches') {
+              link.href = 'tasks.html';
+            } else if (link.parentElement.querySelector('.title').textContent === 'Dashboard Intuitif') {
+              link.href = 'dashboard.html';
+            }
+          });
+        }
+      }, 100);
+    });
+  </script>
 
 </body>
 
